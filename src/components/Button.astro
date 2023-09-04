@@ -1,0 +1,54 @@
+---
+const { btnText = "Click Me", href = "#", type = "default" } = Astro.props;
+---
+<a class=`styled ${type}` href={href}>{btnText}</a>
+
+<style>
+  .btn {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.2rem 1.7rem;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 1em;
+    border: none;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 2px 2px 3px 2px var(--accent-dark);
+  }
+
+  /* .primary {
+    color: var(--clr-primary);
+    background-color: var(--accent);
+  }
+
+  .default {
+    background-color: green;
+  } */
+
+  .styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: var(--accent-dark);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: var(--accent);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+</style>

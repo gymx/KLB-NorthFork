@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/klblogo.png";
+import Button from "../components/Button.astro";
+---
+
+<header class="header">
+  <nav class="mainNav">
+    <Image
+      src={logo}
+      alt="Logo"
+      width={150}
+      height={90}
+    />
+    <ul class="mainNav--items">
+      <li><a href="#">Event Details</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><Button type="primary", btnText="Sign Up", href="#" /><li>
+      <!-- <li><a href="#">Sign Up</a></li> -->
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .mainNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mainNav--items {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    align-items: baseline;
+  }
+
+  .mainNav--items a:hover {
+    font-weight: 600;
+  }
+</style>
