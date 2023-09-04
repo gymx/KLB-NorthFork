@@ -16,27 +16,36 @@ import Button from "../components/Button.astro";
       <li><a href="#details">Event Details</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><Button type="primary", btnText="Sign Up", href="#signup" /><li>
-      <!-- <li><a href="#">Sign Up</a></li> -->
+      <li>
+        <Button
+          type="primary"
+          ,
+          btnText="Sign Up"
+          ,
+          href="#signup"
+        /><li>
+          <!-- <li><a href="#">Sign Up</a></li> -->
+        </li>
+      </li>
     </ul>
+
+    <style>
+      .mainNav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mainNav--items {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        align-items: baseline;
+      }
+
+      .mainNav--items a:hover {
+        font-weight: 600;
+      }
+    </style>
   </nav>
 </header>
-
-<style>
-  .mainNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .mainNav--items {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    align-items: baseline;
-  }
-
-  .mainNav--items a:hover {
-    font-weight: 600;
-  }
-</style>
