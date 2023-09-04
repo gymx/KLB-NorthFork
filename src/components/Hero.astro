@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../assets/images/HeroImage.jpg";
+import Button from "../components/Button.astro";
+---
+
+<section class="hero">
+  <h1 id="details">Community Clean-Up Event</h1>
+  <h2>North Fork Area</h2>
+  <Image
+    src={HeroImage}
+    width={500}
+    height={125}
+    alt="Image of a cleanup happening"
+  />
+  <p>
+    Join us in making our neighborhood cleaner and greener! Our community
+    clean-up event brings residents together to pick up trash along the
+    roadways, promoting a cleaner environment and a stronger sense of community.
+  </p>
+  <Button
+    btnText="Sign Up"
+    href="#signup"
+    type="primary"
+  />
+</section>

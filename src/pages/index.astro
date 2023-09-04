@@ -1,34 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+import Hero from "../components/Hero.astro";
+import Signup from "../components/Signup.astro";
 ---
 
 <Layout title="New Index">
-  <main>
-    <h1>Community Clean-Up Event</h1>
-    <h2>North Fork Area</h2>
-    <p>
-      Join us in making our neighborhood cleaner and greener! Our community
-      clean-up event brings residents together to pick up trash along the
-      roadways, promoting a cleaner environment and a stronger sense of
-      community.
-    </p>
-    <Button
-      btnText="Sign Up"
-      href="#"
-      type="primary"
-    />
-    <p>Add map with event area</p>
-  </main>
+  <Hero />
+  <p>Add map with event area</p>
   <section class="about">
-    <h2>About the event and KLB</h2>
+    <h2 id="about">About the event and KLB</h2>
   </section>
-  <section class="signup">
-    <h2>Sign Up to Join Us</h2>
-  </section>
-  <section class="contact">
+  <Signup />
+  <section
+    class="contact"
+    id="contact"
+  >
     <h2>Contact me with any questions.</h2>
-    <p>northfork.klb@gmail.com</p>
+    <a href="mailto:northfork.klb@gmail.com">Send me a message.</a>
   </section>
 </Layout>
 
