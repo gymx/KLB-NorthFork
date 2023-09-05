@@ -7,12 +7,14 @@ import Button from "../components/Button.astro";
 <section class="hero">
   <h1 id="details">Community Clean-Up Event</h1>
   <h2>North Fork Area</h2>
-  <Image
-    src={HeroImage}
-    width={500}
-    height={125}
-    alt="Image of a cleanup happening"
-  />
+  <div class="heroimage">
+    <Image
+      src={HeroImage}
+      width={500}
+      height={125}
+      alt="Image of a cleanup happening"
+    />
+  </div>
   <p>
     Join us in making our neighborhood cleaner and greener! Our community
     clean-up event brings residents together to pick up trash along the
@@ -24,3 +26,9 @@ import Button from "../components/Button.astro";
     type="primary"
   />
 </section>
+
+<style>
+  .heroimage {
+    margin: 10%;
+  }
+</style>
