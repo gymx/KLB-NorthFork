@@ -24,166 +24,87 @@ import Button from "../components/Button.astro";
       </div>
     </div>
   </div>
+</header>
 
-  <style>
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav {
-    }
-
-    .menu {
-      display: none;
-      transition: display 0.5s ease-out;
-    }
-
-    .menu-items {
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: flex-start;
-      list-style: none;
-      line-height: 1.7em;
-    }
-    .menu-items a:hover {
-      font-weight: 600;
-    }
-
-    .menu-btn {
-      display: none;
-    }
-
-    .menu-icon {
-      cursor: pointer;
-      padding: 20px;
-      border: 1px solid blue;
-    }
-
-    /* Hamburger */
-    .nav-icon {
-      display: inline-block;
-      position: relative;
-      background: var(--primary);
-      height: 2px;
-      width: 18px;
-      transition: background 0.2s ease-out;
-    }
-
-    .nav-icon:before,
-    .nav-icon:after {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      content: "";
-      background: var(--primary);
-    }
-
-    .nav-icon:before {
-      top: -5px;
-    }
-
-    .nav-icon:after {
-      top: 5px;
-    }
-
-    /* Menu Button Action*/
-    .menu-btn:checked ~ .menu {
-      display: inline-block;
-    }
-
-    /* .nav-wrapper {
+<style>
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  .nav {
   }
 
-  .mainNav--items {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-    align-items: baseline;
-  }
-
-  .mainNav--items a:hover {
-    font-weight: 600;
-  }
-
-  .menu-btn,
-  .menu-icon {
+  .menu {
     display: none;
   }
 
-  /***************/
-    /* Mobile Menu */
-    /***************/
-    /* @media (max-width: 50em) {
-    .mainNav {
-      display: none;
-    }
-
-    .menu-icon {
-      border: 2px solid red; 
-      display: block;
-      cursor: pointer;
-      padding: 20px;
-      position: relative;
-    }
-
-    .nav-icon {
-      background: var(--primary);
-      display: block;
-      height: 2px;
-      width: 18px;
-      position: relative;
-      transition: background 0.2s ease-out;
-    }
-
-    .nav-icon::before {
-      background: var(--primary);
-      content: "";
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 5px;
-      transition: all 0.2s ease-out;
-    }
-    .nav-icon::after {
-      background: var(--primary);
-      content: "";
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: -5px;
-      transition: all 0.2s ease-out;
-    }
-
-    .menu-btn:checked ~ .mainNav {
-      display: inline-block;
-    }
-
-    .menu-btn:checked ~ .mainNav > .mainNav--items {
-      flex-direction: column-reverse;
-    }
-
-    .menu-btn:checked ~ .menu-icon.nav-icon {
-      border: 4px solid green;
-    }
+  .menu-items {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    list-style: none;
+    line-height: 1.7em;
   }
-*/
-  </style>
-</header>
+  .menu-items a:hover {
+    font-weight: 600;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid blue;
+  }
+
+  /* Hamburger */
+  .nav-icon {
+    display: inline-block;
+    position: relative;
+    background: var(--primary);
+    height: 2px;
+    width: 18px;
+    transition: background 0.2s ease-out;
+  }
+
+  .nav-icon:before,
+  .nav-icon:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: var(--primary);
+    transition: all 0.5s ease-out;
+  }
+
+  .nav-icon:before {
+    top: -5px;
+  }
+
+  .nav-icon:after {
+    top: 5px;
+  }
+
+  /* Menu Button Action*/
+  .menu-btn:checked ~ .menu {
+    display: inline-block;
+  }
+
+  .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: white;
+  }
+
+  .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+</style>
