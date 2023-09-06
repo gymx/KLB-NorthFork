@@ -2,11 +2,7 @@
 const { btnText = "Click Me", href = "#", type = "default" } = Astro.props;
 ---
 
-<a
-  class=`styled ${type}`
-  href={href}
-  >{btnText}</a
->
+<a class=`styled ${type}` href={href}>{btnText}</a>
 
 <style>
   /* .primary {
@@ -19,10 +15,11 @@ const { btnText = "Click Me", href = "#", type = "default" } = Astro.props;
   } */
 
   .styled {
+    display: inline-block;
     border: 0;
-    line-height: 2.5;
-    padding: 10px 20px;
-    font-size: 1.5rem;
+    line-height: 1.2;
+    padding: 5px 20px;
+    font-size: 1.2rem;
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -54,7 +51,7 @@ const { btnText = "Click Me", href = "#", type = "default" } = Astro.props;
   }
 
   /* Mobile Styling */
-  @media (max-width: 50em) {
+  @media (max-width: 48em) {
     .styled {
       font-size: 1rem;
       line-height: 1.1;

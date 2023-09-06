@@ -7,138 +7,180 @@ import close from "../assets/images/close.svg";
 ---
 
 <header class="header">
-  <div class="nav-wrapper">
-    <a
-      class="logo"
-      href="/"
-    >
-      <Image
-        src={logo}
-        alt="Logo"
-        width={150}
-        height={90}
-      />
-    </a>
-    <label
-      class="menu-icon"
-      for="menu-btn"
-    >
-      <span class="nav-icon"></span>
-    </label>
-    <input
-      class="menu-btn"
-      type="checkbox"
-      id="menu-btn"
-    />
-    <nav class="mainNav">
-      <ul
-        class="mainNav--items"
-        aria-label="Main Navigation"
-        id="main-nav"
-      >
-        <li><a href="#details">Event Details</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <div>
-            <Button
-              type="primary"
-              btnText="Sign Up"
-              href="#signup"
-            />
-          </div>
-        </li>
-      </ul>
-    </nav>
+  <a class="logo" href="/">
+    <Image src={logo} alt="Logo" width={150} height={90} />
+  </a>
+  <div class="nav">
+    <div class="control">
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn">
+        <span class="nav-icon"></span>
+      </label>
+    </div>
+    <ul class="menu" aria-label="Main Navigation" id="menu">
+      <li><a href="#details">Event Details</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><Button type="primary" btnText="Sign Up" href="#signup" /></li>
+    </ul>
   </div>
+</header>
 
-  <style>
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<style>
+  .header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
 
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
+  .nav {
+  }
 
-    .mainNav--items {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      align-items: baseline;
-    }
+  .menu {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    /* align-items: center; */
+    list-style: none;
+    line-height: 1.5em;
+    display: none;
+    transition: display 0.2s ease-out;
+  }
+  .menu a:hover {
+    font-weight: 600;
+  }
 
-    .mainNav--items a:hover {
-      font-weight: 600;
-    }
+  .menu-icon {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid blue;
+  }
 
-    .menu-btn,
-    .menu-icon {
+  /* Hamburger */
+  .nav-icon {
+    display: inline-block;
+    position: relative;
+    background: var(--primary);
+    height: 2px;
+    width: 18px;
+    transition: background 0.2s ease-out;
+  }
+
+  .nav-icon:before,
+  .nav-icon:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: var(--primary);
+  }
+
+  .nav-icon:before {
+    top: -5px;
+  }
+
+  .nav-icon:after {
+    top: 5px;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  /* Menu Button */
+  .menu-btn:checked ~ .menu {
+  }
+
+  /* .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .mainNav--items {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    align-items: baseline;
+  }
+
+  .mainNav--items a:hover {
+    font-weight: 600;
+  }
+
+  .menu-btn,
+  .menu-icon {
+    display: none;
+  }
+
+  /***************/
+  /* Mobile Menu */
+  /***************/
+  /* @media (max-width: 50em) {
+    .mainNav {
       display: none;
     }
 
-    /***************/
-    /* Mobile Menu */
-    /***************/
-    @media (max-width: 50em) {
-      .mainNav {
-        display: none;
-      }
-
-      .menu-icon {
-        border: 2px solid red; /* Remove this after debugging */
-        display: block;
-        cursor: pointer;
-        padding: 20px;
-        position: relative;
-      }
-
-      .nav-icon {
-        background: var(--primary);
-        display: block;
-        height: 2px;
-        width: 18px;
-        position: relative;
-        transition: background 0.2s ease-out;
-      }
-
-      .nav-icon::before {
-        background: var(--primary);
-        content: "";
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 5px;
-        transition: all 0.2s ease-out;
-      }
-      .nav-icon::after {
-        background: var(--primary);
-        content: "";
-        display: block;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: -5px;
-        transition: all 0.2s ease-out;
-      }
-
-      .menu-btn:checked ~ .mainNav {
-        display: inline-block;
-      }
-
-      .menu-btn:checked ~ .mainNav > .mainNav--items {
-        flex-direction: column-reverse;
-      }
+    .menu-icon {
+      border: 2px solid red; 
+      display: block;
+      cursor: pointer;
+      padding: 20px;
+      position: relative;
     }
-  </style>
-</header>
+
+    .nav-icon {
+      background: var(--primary);
+      display: block;
+      height: 2px;
+      width: 18px;
+      position: relative;
+      transition: background 0.2s ease-out;
+    }
+
+    .nav-icon::before {
+      background: var(--primary);
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 5px;
+      transition: all 0.2s ease-out;
+    }
+    .nav-icon::after {
+      background: var(--primary);
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: -5px;
+      transition: all 0.2s ease-out;
+    }
+
+    .menu-btn:checked ~ .mainNav {
+      display: inline-block;
+    }
+
+    .menu-btn:checked ~ .mainNav > .mainNav--items {
+      flex-direction: column-reverse;
+    }
+
+    .menu-btn:checked ~ .menu-icon.nav-icon {
+      border: 4px solid green;
+    }
+  }
+*/
+</style>
