@@ -107,4 +107,18 @@ import Button from "../components/Button.astro";
     transform: rotate(45deg);
     top: 0;
   }
+
+  /* Set up for Non-mobile */
+  @media (min-width: 48em) {
+    .menu-icon {
+      display: none;
+    }
+    .menu {
+      display: inline-block;
+    }
+    .menu-items {
+      flex-direction: row;
+      gap: 1.3em;
+    }
+  }
 </style>
