@@ -5,8 +5,10 @@ import Button from "../components/Button.astro";
 ---
 
 <section class="hero">
-  <h1 id="details">Community Clean-Up Event</h1>
-  <h2>North Fork Area</h2>
+  <h1>North Fork Area</h1>
+  <h2 class="subtitle">
+    <em>Community Clean-Up Event - October 21st</em>
+  </h2>
   <div class="heroimage">
     <Image
       src={HeroImage}
@@ -20,15 +22,20 @@ import Button from "../components/Button.astro";
     clean-up event brings residents together to pick up trash along the
     roadways, promoting a cleaner environment and a stronger sense of community.
   </p>
-  <Button
-    btnText="Sign Up"
-    href="#signup"
-    type="primary"
-  />
+  <Button btnText="Sign Up" href="/Signup" type="primary" />
 </section>
 
 <style>
   .heroimage {
-    margin: 10%;
+    margin: 10px;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+  .subtitle {
+    margin-top: 0;
   }
 </style>
