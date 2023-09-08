@@ -5,7 +5,7 @@ import Button from "../components/Button.astro";
 ---
 
 <header class="header">
-  <a class="logo" href="/">
+  <a class="logo" href="/KLB-NorthFork">
     <Image src={logo} alt="KLB Logo" width={150} height={90} />
   </a>
   <div class="nav">
@@ -16,10 +16,16 @@ import Button from "../components/Button.astro";
       </label>
       <div class="menu">
         <ul class="menu-items" aria-label="Main Navigation" id="menu-items">
-          <li><a href="/#about">Event Details</a></li>
-          <li><a href="/#area">Area</a></li>
-          <li><a href="/#contact">Contact</a></li>
-          <li><Button type="primary" btnText="Sign Up" href="/Signup" /></li>
+          <li><a href="/KLB-NorthFork/#about">Event Details</a></li>
+          <li><a href="/KLB-NorthFork/#area">Area</a></li>
+          <li><a href="/KLB-NorthFork/#contact">Contact</a></li>
+          <li>
+            <Button
+              type="primary"
+              btnText="Sign Up"
+              href="/KLB-NorthFork/Signup"
+            />
+          </li>
         </ul>
       </div>
     </div>
