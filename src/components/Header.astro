@@ -37,16 +37,22 @@ import Button from "../components/Button.astro";
   }
 
   .menu {
-    display: none;
+    /* display: none; */
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-out;
   }
-
   .menu-items {
+    position: absolute;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
     list-style: none;
     line-height: 1.7em;
+    opacity: 0;
+    transition: all 0.5s ease-out;
   }
+
   .menu-items a:hover {
     font-weight: 600;
   }
@@ -91,6 +97,13 @@ import Button from "../components/Button.astro";
   /* Menu Button Action*/
   .menu-btn:checked ~ .menu {
     display: inline-block;
+    position: relative;
+    overflow: auto;
+  }
+
+  .menu-btn:checked ~ .menu .menu-items {
+    position: relative;
+    opacity: 1;
   }
 
   .menu-btn:checked ~ .menu-icon .nav-icon {
@@ -118,6 +131,8 @@ import Button from "../components/Button.astro";
     .menu-items {
       flex-direction: row;
       gap: 1.3em;
+      position: relative;
+      opacity: 1;
     }
   }
 </style>
