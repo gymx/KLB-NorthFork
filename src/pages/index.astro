@@ -10,9 +10,14 @@ import MapImage from "../assets/images/AreaMap.webp";
   <Hero />
   <section class="about">
     <h2 id="about">Event Details</h2>
+    <ul class="dateandtime">
+      <li>October 21st, starting at 9am</li>
+      <li>North Fork Baptist Church Parking Lot</li>
+    </ul>
     <p>
-      This is a community clean-up for the North Fork area defined below.
+      This is a community cleanup for the North Fork area defined below.
       Everyone is welcome to participate, whether you live in the area or not.
+      You're welcome to start at any time if you cannot meet at 9.
     </p>
     <p>
       Keep Loudoun Beautiful will provide bags, and a limited supply of pick-up
@@ -24,11 +29,6 @@ import MapImage from "../assets/images/AreaMap.webp";
         target="_blank">keeploudounbeautiful.org</a
       >
     </p>
-    <ul>
-      <li>October 21st</li>
-      <li>9am</li>
-      <li>North Fork Baptist Church Parking Lot</li>
-    </ul>
   </section>
   <section class="area" id="area">
     <h1>Area Map</h1>
@@ -44,15 +44,14 @@ import MapImage from "../assets/images/AreaMap.webp";
       type="secondary"
     />
     <p>
-      The North Fork area is includes these roads and the neighborhoods along
-      them.
+      The North Fork area includes these roads and the neighborhoods along them.
     </p>
     <ul>
-      <li>North Fork rd from the East end to Telegraph Springs Rd</li>
-      <li>Shelbourne Gleeb North to Oakland Green Rd</li>
+      <li>North Fork Rd from the East end to Telegraph Springs Rd</li>
+      <li>Shelbourne Glebe North to Oakland Green Rd</li>
       <li>Watermill down to Snickersville Turnpike</li>
       <li>Greggsville North to Telegraph Springs and South to Philomont Rd</li>
-      <li>Telegraphs Springs from Greggsville to North Fork</li>
+      <li>Telegraph Springs from Greggsville to North Fork</li>
       <li>Shoemaker School Rd from Telegraph Springs to Silcott Springs</li>
     </ul>
   </section>
@@ -60,14 +59,14 @@ import MapImage from "../assets/images/AreaMap.webp";
   <section class="contact" id="contact">
     <h2>Contact me with any questions.</h2>
     <p>
-      Hi, I'm Jim Cross. I live on North Fork rd and I am the Area
+      Hi, I'm Jim Cross. I live on North Fork Rd and I am the Area
       Representative for Keep Loudoun Beautiful. I haven't organized a clean up
       over the past few years but would like to start organizing two events each
-      year: spring and fall. It's a great time of year when the weather is great
+      year: spring and fall. It's a great time of year when the weather is nice
       for getting outside.
     </p>
     <p>
-      If you have any questions about the event or about Keep Loudoun Beautiful
+      If you have any questions about the event or about Keep Loudoun Beautiful,
       I'd be happy to answer or direct you to someone who can. Just drop me an
       email using the link below or direct your favorite email app to me at:
       northfork.klb@gmail.com
@@ -92,5 +91,18 @@ import MapImage from "../assets/images/AreaMap.webp";
 
   ul {
     line-height: 1.5em;
+  }
+
+  .dateandtime {
+    border: 4px solid var(--primary);
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    border-radius: 1em;
+    font-size: 1.5em;
+    font-weight: 650;
+  }
+
+  .dateandtime li {
+    list-style: none;
   }
 </style>
