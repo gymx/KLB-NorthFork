@@ -1,8 +1,13 @@
 ---
-const { btnText = "Click Me", href = "#", type = "default" } = Astro.props;
+const {
+  btnText = "Click Me",
+  href = "#",
+  type = "default",
+  target = "_blank",
+} = Astro.props;
 ---
 
-<a class=`styled ${type}` href={href}>{btnText}</a>
+<a class=`styled ${type}` target=`${target}` href={href}>{btnText}</a>
 
 <style>
   /* .primary {
